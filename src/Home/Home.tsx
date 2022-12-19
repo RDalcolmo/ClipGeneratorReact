@@ -19,7 +19,7 @@ function Home()
                                 "&response_type=" + encodeURIComponent("token") +
                                 "&scope="         + encodeURIComponent("clips:edit") +
                                 "&force_verify="  + encodeURIComponent("true") +
-                                "&state=" + encodeURIComponent(channelName );
+                                "&state=" + encodeURIComponent(channelName);
     }
 
     return (
