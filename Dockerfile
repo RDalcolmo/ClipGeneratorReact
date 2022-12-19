@@ -5,7 +5,6 @@ COPY package.json /app
 
 RUN npm install -g npm install
 COPY . /app
-RUN npm run build --omit=dev
 
 EXPOSE 5004
 CMD ["npm", "start"]
