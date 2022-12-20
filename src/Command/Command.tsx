@@ -34,7 +34,7 @@ function Command()
             //isVisible = true;
         }
         GetBroadcastUserId();
-    });
+    }, []);
    
     return (
         <div>
