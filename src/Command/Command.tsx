@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 function Command()
 {
-    //let isVisible: boolean = false;
+    const [isVisible, setIsVisible] = useState(false);
     const [broadcasterId, setBroadcasterId] = useState('');
     const authorizationCode = new URLSearchParams((window.location.href).split("#")[1]).get('access_token') as string;
     const channel = new URLSearchParams(window.location.href).get('state');
@@ -28,13 +28,13 @@ function Command()
             const data = await result.json();
             console.log(data);
             setBroadcasterId(data['data'][0].id);
-            //isVisible = true;
+            setIsVisible(true);
         }
         GetBroadcastUserId();
     }, []);
    
     return (
-        <div>
+        <div style={{display: isVisible ? "block" : "none"}}>
             <div>
                 <p>
                     Here is your command:
