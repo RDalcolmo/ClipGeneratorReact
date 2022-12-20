@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 function Command()
 {
-    let isVisible: boolean = false;
+    //let isVisible: boolean = false;
     const [accessToken, setAccessToken] = useState('');
     const [broadcasterId, setBroadcasterId] = useState('');
 
@@ -31,7 +31,7 @@ function Command()
             console.log(data);
             setAccessToken(authorizationCode);
             setBroadcasterId(data['data'][0].id);
-            isVisible = true;
+            //isVisible = true;
         }
         GetBroadcastUserId();
     });
