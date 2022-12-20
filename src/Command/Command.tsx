@@ -4,14 +4,12 @@ import { useEffect, useState } from "react";
 function Command()
 {
     //let isVisible: boolean = false;
-    const [accessToken, setAccessToken] = useState('');
     const [broadcasterId, setBroadcasterId] = useState('');
+    const authorizationCode = new URLSearchParams((window.location.href).split("#")[1]).get('access_token') as string;
+    const channel = new URLSearchParams(window.location.href).get('state');
 
     useEffect(() =>
     {
-        const authorizationCode = new URLSearchParams((window.location.href).split("#")[1]).get('access_token') as string;
-        const channel = new URLSearchParams(window.location.href).get('state');
-
         if (!authorizationCode)
         {
             return;
@@ -29,7 +27,6 @@ function Command()
                         });
             const data = await result.json();
             console.log(data);
-            setAccessToken(authorizationCode);
             setBroadcasterId(data['data'][0].id);
             //isVisible = true;
         }
@@ -45,7 +42,7 @@ function Command()
             </div>
             <div>
                 <p>
-                    $(urlfetch https://api.twitchclipgenerator.com/clips?access_token={accessToken}&broadcaster_id={broadcasterId})
+                    $(urlfetch https://api.twitchclipgenerator.com/clips?access_token={authorizationCode}&broadcaster_id={broadcasterId})
                 </p>
             </div>
         </div>
