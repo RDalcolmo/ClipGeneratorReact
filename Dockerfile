@@ -1,10 +1,9 @@
-FROM node:latest
-RUN mkdir -p /app
+FROM node
 WORKDIR /app
-COPY package.json /app
+COPY package.json .
 
 RUN npm install
-COPY . /app
+COPY . .
 RUN npm run build
 
 EXPOSE 5004
