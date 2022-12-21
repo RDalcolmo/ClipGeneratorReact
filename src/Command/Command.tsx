@@ -39,7 +39,7 @@ function Command()
     }, [data]);
    
     return (
-        <div style={{display: isVisible ? "block" : "none"}}>
+        <div className="container" style={{display: isVisible ? "block" : "none"}}>
             <div>
                 <p>
                     Here is your command:

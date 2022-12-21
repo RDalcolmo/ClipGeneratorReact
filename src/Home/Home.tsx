@@ -23,7 +23,7 @@ function Home()
     }
 
     return (
-        <div>
+        <div className="container">
         <h3>Made by SkyeRaf (Twitter/Twitch)</h3>
             <div>
                 <input type="text" placeholder="Channel to clip" value={channelName} onChange={(e) => setChannelName(e.target.value)}/>
