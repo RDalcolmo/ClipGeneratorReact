@@ -24,10 +24,18 @@ function Home()
 
     return (
         <div className="container">
-        <h3>Made by SkyeRaf (Twitter/Twitch)</h3>
             <div>
-                <input type="text" placeholder="Channel to clip" value={channelName} onChange={(e) => setChannelName(e.target.value)}/>
-                <button className="login-button" onClick={onClick}>Generate Command!</button>
+                <h3>Made by SkyeRaf (Twitter/Twitch)</h3>
+            </div>
+            <div>
+                <div className="row row-cols-lg-auto g-3">
+                    <div>
+                        <input type="text" className="form-control" placeholder="Channel to clip" value={channelName} onChange={(e) => setChannelName(e.target.value)}/>
+                    </div>
+                    <div>
+                        <button className="btn btn-dark" onClick={onClick}>Generate Command!</button>
+                    </div>
+                </div>
             </div>
         </div>
     );
