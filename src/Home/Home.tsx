@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import './Home.css'
 
 function Home()
 {
+    const BASE_API_URL = import.meta.env.PROD ? "https://api.twitchclipgenerator.com" : "http://localhost:5173";
     const [channelName, setChannelName] = useState('');
     
     function onClick()
@@ -14,12 +15,12 @@ function Home()
         }
 
         window.location.href = "https://id.twitch.tv/oauth2/authorize" +
-                                "?client_id=" + encodeURIComponent("4qn897qcu5idrecjs143gi62s25ybg") +
-                                "&redirect_uri=" + encodeURIComponent("https://twitchclipgenerator.com/command") +
-                                "&response_type=" + encodeURIComponent("token") +
-                                "&scope="         + encodeURIComponent("clips:edit") +
-                                "&force_verify="  + encodeURIComponent("true") +
-                                "&state=" + encodeURIComponent(channelName);
+            "?client_id=" + encodeURIComponent("4qn897qcu5idrecjs143gi62s25ybg") +
+            "&redirect_uri=" + encodeURIComponent(`${BASE_API_URL}/command`) +
+            "&response_type=" + encodeURIComponent("code") +
+            "&scope="         + encodeURIComponent("clips:edit") +
+            "&force_verify="  + encodeURIComponent("true") +
+            "&state=" + encodeURIComponent(channelName);
     }
 
     return (

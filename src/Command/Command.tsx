@@ -1,39 +1,22 @@
 import { useState, useEffect } from "react";
 import { useQuery } from 'react-query';
-
+import { initiateAccount } from "../Utils/UserControllerCalls";
 
 function Command()
 {
     const [isVisible, setIsVisible] = useState(false);
-    const [broadcasterId, setBroadcasterId] = useState('');
-    const authorizationCode = new URLSearchParams((window.location.href).split("#")[1]).get('access_token') as string;
-    const channel = new URLSearchParams(window.location.href).get('state');
+    const authorizationCode = new URLSearchParams(location.search).get('code') as string;
+    const channelName = new URLSearchParams(location.search).get('state') as string;
+    const { data } = useQuery(['code', authorizationCode], () => initiateAccount(authorizationCode, channelName));
     
     if (!authorizationCode)
     {
         return null;
     }
     
-    async function fetchUser()
-    {
-        const response = await fetch(`https://api.twitch.tv/helix/users?login=${channel}`,
-        {
-            headers:
-            {
-                'Client-ID': '4qn897qcu5idrecjs143gi62s25ybg',
-                'Authorization': 'Bearer ' + authorizationCode
-            }
-        });
-        return response.json();
-    }
-    
-    const { data, status } = useQuery(['accessToken', authorizationCode], fetchUser);
-    
     useEffect(() => {
         if (data)
         {
-            console.log('Twitch login', {status, data});
-            setBroadcasterId(data['data'][0].id);
             setIsVisible(true);
         }
     }, [data]);
@@ -47,7 +30,7 @@ function Command()
             </div>
             <div>
                 <p>
-                    $(urlfetch https://api.twitchclipgenerator.com/clips?access_token={authorizationCode}&broadcaster_id={broadcasterId})
+                    $(urlfetch https://api.twitchclipgenerator.com/clips?apiKey={data})
                 </p>
             </div>
         </div>
