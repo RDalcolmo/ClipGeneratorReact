@@ -30,7 +30,7 @@ function Command()
             </div>
             <div>
                 <p>
-                    $(urlfetch https://api.twitchclipgenerator.com/clips?apiKey={data})
+                    $(urlfetch https://api.twitchclipgenerator.com/Clips?apiKey={data})
                 </p>
             </div>
         </div>

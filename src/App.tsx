@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import './App.css';
 import NavMenu from './NavMenu/NavMenu';
 import 'bootstrap/dist/css/bootstrap.css';
