@@ -3,7 +3,7 @@ import './Home.css'
 
 function Home()
 {
-    const BASE_API_URL = import.meta.env.PROD ? "https://api.twitchclipgenerator.com" : "http://localhost:5173";
+    const BASE_API_URL = import.meta.env.PROD ? "https://twitchclipgenerator.com" : "http://localhost:5173";
     const [channelName, setChannelName] = useState('');
     
     function onClick()
