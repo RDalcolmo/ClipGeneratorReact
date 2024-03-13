@@ -30,7 +30,12 @@ function Command()
             </div>
             <div>
                 <p>
-                    $(urlfetch https://api.twitchclipgenerator.com/Clips?apiKey={data})
+                    Nightbot Command: $(urlfetch https://api.twitchclipgenerator.com/Clips?apiKey={data})
+                </p>
+            </div>
+            <div>
+                <p>
+                    Stream Elements Command: ${'${'}customapihttps://api.twitchclipgenerator.com/Clips?apiKey={data}{'}'})
                 </p>
             </div>
         </div>
