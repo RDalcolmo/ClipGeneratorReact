@@ -35,7 +35,7 @@ function Command()
             </div>
             <div>
                 <p>
-                    Stream Elements Command: ${'${'}customapihttps://api.twitchclipgenerator.com/Clips?apiKey={data}{'}'})
+                    Stream Elements Command: ${'{'}customapi.https://api.twitchclipgenerator.com/Clips?apiKey={data}{'}'}
                 </p>
             </div>
         </div>
