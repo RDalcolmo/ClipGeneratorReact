@@ -25,7 +25,7 @@ function Home()
     return (
         <div className="container">
             <div>
-                <h3>Made by SkyeRaf (Twitter/Twitch)</h3>
+                <h3>Generate a Clipping Command</h3>
             </div>
             <div>
                 <div className="row row-cols-lg-auto g-3">

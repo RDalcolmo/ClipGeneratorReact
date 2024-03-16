@@ -7,7 +7,7 @@ function NavMenu()
         <>
         <nav className="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div className="container">
-                <Link to='/' className="navbar-brand">Clip Generator</Link>
+                <Link to='/' className="navbar-brand">Clip Command Generator</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
