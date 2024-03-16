@@ -30,7 +30,7 @@ function Home()
             <div>
                 <div className="row row-cols-lg-auto g-3">
                     <div>
-                        <input type="text" className="form-control" placeholder="Channel to clip" value={channelName} onChange={(e) => setChannelName(e.target.value)}/>
+                        <input type="text" className="form-control" placeholder="Twitch Channel Name" value={channelName} onChange={(e) => setChannelName(e.target.value)}/>
                     </div>
                     <div>
                         <button className="btn btn-dark" onClick={onClick}>Generate Command!</button>
