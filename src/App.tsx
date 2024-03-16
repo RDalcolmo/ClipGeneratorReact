@@ -16,6 +16,11 @@ function App() {
             <Route path="*" element={<ErrorPage/>}/>
           </Route>
         </Routes>
+        <footer className="footer">
+            <div className="footer-text">
+                <center><b>Twitch Clip Command Generator</b> &copy; {new Date().getFullYear()} - Created by SkyeRaf (Twitter/Twitch)</center> 
+            </div>
+        </footer>
       </BrowserRouter>
   );
 }
