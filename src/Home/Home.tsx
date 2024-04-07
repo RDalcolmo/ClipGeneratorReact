@@ -23,6 +23,7 @@ function Home()
     }
 
     return (
+        <>
         <div className="container">
             <div>
                 <h3>Generate a Clipping Command</h3>
@@ -38,6 +39,15 @@ function Home()
                 </div>
             </div>
         </div>
+        <div className="container" style={{paddingTop: "5vh"}}>
+        <div>
+            <h5>Why use a clipping command?</h5>
+            <li>A clipping command uses the Twitch API which directly requests for a clip to be generated.</li>
+            <li>It is faster and more responsive than interacting with the UI which can take time loading all the resources required to make a clip.</li>
+            <li>It allows for viewers with slow connection to generate clips almost instantly.</li>
+        </div>
+    </div>
+    </>
     );
 }
 
