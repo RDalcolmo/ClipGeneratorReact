@@ -15,7 +15,7 @@ function Home()
 
         window.location.href = "https://id.twitch.tv/oauth2/authorize" +
             "?client_id=" + encodeURIComponent("4qn897qcu5idrecjs143gi62s25ybg") +
-            "&redirect_uri=" + encodeURIComponent("https://twitchclipgenerator.com/command") +
+            "&redirect_uri=" + encodeURIComponent("http://localhost:5173/command") +
             "&response_type=" + encodeURIComponent("code") +
             "&scope="         + encodeURIComponent("clips:edit") +
             "&force_verify="  + encodeURIComponent("true") +
