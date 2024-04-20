@@ -38,6 +38,11 @@ function Command()
                     Stream Elements Command: ${'{'}customapi.https://api.twitchclipgenerator.com/Clips?apiKey={data}{'}'}
                 </p>
             </div>
+            <div>
+                <p>
+                    Fossabot Command: ${'('}customapi https://api.twitchclipgenerator.com/Clips?apiKey={data}{')'}
+                </p>
+            </div>
         </div>
     );
 }
