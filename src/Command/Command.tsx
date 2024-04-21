@@ -30,17 +30,17 @@ function Command()
             </div>
             <div>
                 <p>
-                    <b>Nightbot Command:</b> !addcom !clip $(urlfetch https://api.twitchclipgenerator.com/Clips?apiKey={data})
+                    <b>Nightbot Command:</b> $(urlfetch https://api.twitchclipgenerator.com/Clips?apiKey={data})
                 </p>
             </div>
             <div>
                 <p>
-                    <b>Stream Elements Command:</b> !addcom !clip ${'{'}customapi.https://api.twitchclipgenerator.com/Clips?apiKey={data}{'}'}
+                    <b>Stream Elements Command:</b> ${'{'}customapi.https://api.twitchclipgenerator.com/Clips?apiKey={data}{'}'}
                 </p>
             </div>
             <div>
                 <p>
-                    <b>Fossabot Command:</b> !addcom !clip ${'('}customapi https://api.twitchclipgenerator.com/Clips?apiKey={data}{')'}
+                    <b>Fossabot Command:</b> ${'('}customapi https://api.twitchclipgenerator.com/Clips?apiKey={data}{')'}
                 </p>
             </div>
         </div>
