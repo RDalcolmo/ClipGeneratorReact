@@ -8,7 +8,21 @@ function Command()
     const authorizationCode = new URLSearchParams(location.search).get('code') as string;
     const channelName = new URLSearchParams(location.search).get('state') as string;
     const { data } = useQuery(['code', authorizationCode], () => initiateAccount(authorizationCode, channelName));
-    
+    const [nightbotCommand, setNightbotCommand] = useState(`!addcom !clip $(urlfetch https://api.twitchclipgenerator.com/Clips?apiKey=${data})`);
+    const [streamElementsCommand, setStreamElementsCommand] = useState(`!addcom !clip \${customapi.https://api.twitchclipgenerator.com/Clips?apiKey=${data}}`);
+    const [fossabotCommand, setFossabotCommand] = useState(`!addcom !clip $(customapi https://api.twitchclipgenerator.com/Clips?apiKey=${data})`);
+
+    const copyToClipboard = (text: string) => {
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                alert('Text copied to clipboard');
+                // You can add feedback here if you want
+            })
+            .catch((error) => {
+                alert('Error copying text: ' + error);
+            });
+    };
+
     if (!authorizationCode)
     {
         return null;
@@ -23,25 +37,18 @@ function Command()
    
     return (
         <div className="container" style={{display: isVisible ? "block" : "none"}}>
-            <div>
-                <p>
-                    Here are your commands! Copy the one for your channel's specific bot:
-                </p>
+            <div style={{paddingBottom: 10}}>
+                <p>Here are your commands!</p>
+                <b>Click the button for your bot below and paste it into Twitch chat:</b>
             </div>
-            <div>
-                <p>
-                    <b>Nightbot Command:</b> $(urlfetch https://api.twitchclipgenerator.com/Clips?apiKey={data})
-                </p>
+            <div style={{paddingBottom: 5}}>
+                <button className="btn btn-dark" onClick={() => copyToClipboard(nightbotCommand)}>Nightbot Command</button>
             </div>
-            <div>
-                <p>
-                    <b>Stream Elements Command:</b> ${'{'}customapi.https://api.twitchclipgenerator.com/Clips?apiKey={data}{'}'}
-                </p>
+            <div style={{paddingBottom: 5}}>
+                <button className="btn btn-dark" onClick={() => copyToClipboard(streamElementsCommand)}>StreamElements Command</button>
             </div>
-            <div>
-                <p>
-                    <b>Fossabot Command:</b> ${'('}customapi https://api.twitchclipgenerator.com/Clips?apiKey={data}{')'}
-                </p>
+            <div style={{paddingBottom: 5}}>
+                <button className="btn btn-dark" onClick={() => copyToClipboard(fossabotCommand)}>Fossabot Command</button>
             </div>
         </div>
     );
