@@ -7,10 +7,10 @@ function Command()
     const [isVisible, setIsVisible] = useState(false);
     const authorizationCode = new URLSearchParams(location.search).get('code') as string;
     const channelName = new URLSearchParams(location.search).get('state') as string;
-    const { data } = useQuery(['code', authorizationCode], () => initiateAccount(authorizationCode, channelName));
-    const [nightbotCommand, setNightbotCommand] = useState(`!addcom !clip $(urlfetch https://api.twitchclipgenerator.com/Clips?apiKey=${data})`);
-    const [streamElementsCommand, setStreamElementsCommand] = useState(`!addcom !clip \${customapi.https://api.twitchclipgenerator.com/Clips?apiKey=${data}}`);
-    const [fossabotCommand, setFossabotCommand] = useState(`!addcom !clip $(customapi https://api.twitchclipgenerator.com/Clips?apiKey=${data})`);
+    const { data } = useQuery('code', () => initiateAccount(authorizationCode, channelName));
+    const [nightbotCommand, setNightbotCommand] = useState("");
+    const [streamElementsCommand, setStreamElementsCommand] = useState("");
+    const [fossabotCommand, setFossabotCommand] = useState("");
 
     const copyToClipboard = (text: string) => {
         navigator.clipboard.writeText(text)
@@ -31,6 +31,9 @@ function Command()
     useEffect(() => {
         if (data)
         {
+            setNightbotCommand(`!addcom !clip $(urlfetch https://api.twitchclipgenerator.com/Clips?apiKey=${data})`);
+            setStreamElementsCommand(`!addcom !clip \${customapi.https://api.twitchclipgenerator.com/Clips?apiKey=${data}}`);
+            setFossabotCommand(`!addcom !clip $(customapi https://api.twitchclipgenerator.com/Clips?apiKey=${data})`)
             setIsVisible(true);
         }
     }, [data]);
