@@ -4,8 +4,8 @@ import { Link, Outlet } from 'react-router-dom';
 function NavMenu()
 {
     return (
-        <>
-        <nav className="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div id="app">
+        <nav className="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark mb-3">
             <div className="container">
                 <Link to='/' className="navbar-brand">Clip Command Generator</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@ function NavMenu()
             </div>
         </nav>
         <Outlet />
-        </>
+        </div>
     );
 }
 

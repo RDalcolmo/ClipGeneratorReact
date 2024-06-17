@@ -1,8 +1,63 @@
 .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    white-space: nowrap;
-    line-height: 60px; /* Vertically center the text there */
-  }
-  
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #1E1F22 !important;
+}
+
+.footer-text {
+  color: #bdbfc5 !important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: white !important;
+}
+
+label, li, b {
+  color: #bdbfc5 !important;
+}
+
+p {
+  color: #bdbfc5 !important;
+} 
+
+td {
+  color: white !important;
+  background-color: #2B2D31 !important;
+}
+
+#app {
+  background-color: #313338 !important;
+  min-height: 100vh;
+  margin-bottom: 60px;
+}
+
+/* Dashboard Modal */
+div.modal-header {
+  background-color: #1E1F22 !important;
+  border-bottom: 0;
+}
+
+div.modal-body {
+  background-color: #2B2D31 !important;
+  border-bottom: 0;
+}
+
+div.modal-footer {
+  border-top: 0;
+  background-color: #2B2D31 !important;
+}
+
+input.form-control {
+ background-color: #f9f9f9 !important;
+}
+
+select.w-25.form-select {
+  background-color: #f9f9f9 !important;
+ }
+
+div.modal-title {
+  color: white !important;
+}
